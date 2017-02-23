@@ -1,0 +1,39 @@
+
+SPACE:
+(Vertex Shader)
+Object Space
+-> modeling (model matrix) ->
+World S.
+-> viewing (view matrix) ->
+Eye S.
+-> projection (proj. matrix)->
+Clip S.
+(Fi Vertex Shader)
+-> ... (dividir por W)->
+NDC
+-> ... ->
+Window S.
+
+
+ATRIBUTOS:
+(info asociada a un vertice)
+vec3 vertex; // object space (x,y,z)
+vec3 normal; // obj space (nx,ny,nz)
+vec3 color; // RGB (0..1)
+
+
+
+vec4 gl_Position; // clip space
+vec4 frontColor; // RGBA
+
+----------------------------------
+
+[projectMat * [viewMat * [modelMat * vec4(vertex,1.0)]]] (pasar el vertice de object space a clip space)
+
+modelViewProjectionMatrix -> hace todo lo puesto arriva directamente
+
+
+paso normales de obj space a eye space -> vec3 N = normalMatrix * normal;
+
+
+
