@@ -3,11 +3,11 @@
 in vec4 frontColor;
 out vec4 fragColor;
 
-uniform int n = 3;
+uniform int n = 4;
 
 void main()
 {
-	if(mod(gl_FragColor.y, n) != 0) discard;
+	if(int(mod(gl_FragCoord.y, n)) != 0) discard;
     fragColor = frontColor;
 }
 
